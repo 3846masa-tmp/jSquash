@@ -15,7 +15,7 @@ if (isRunningInCloudFlareWorkers || isRunningInNode) {
   }
 
   if (import.meta.url === undefined) {
-    import.meta.url = 'https://localhost';
+    Object.assign(import.meta, { url: 'https://localhost' });
   }
 
   if (typeof self !== 'undefined' && self.location === undefined) {
